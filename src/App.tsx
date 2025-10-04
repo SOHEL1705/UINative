@@ -1,11 +1,20 @@
-import Dashboard from "./components/dashboard/Dashboard"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Dashboard from "./components/dashboard/Dashboard";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Landing />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+]);
 
 function App() {
-  return (
-    <div>
-      <Dashboard/>
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

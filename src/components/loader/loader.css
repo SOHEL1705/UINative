@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-svg {
+  width: 400px;
+  height: 120px;
+}
+
+.text-svg text {
+  font-family: "Arial Black", sans-serif;
+  font-size: 60px;
+  fill: none;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* stroke drawing animation */
+.dash {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dashOffset 3s ease-in-out infinite alternate;
+}
+
+@keyframes dashOffset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

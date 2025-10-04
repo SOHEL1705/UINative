@@ -1,11 +1,16 @@
+import Footer from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1  bg-gray-50">
         <section className="py-12 text-center md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
@@ -17,35 +22,34 @@ const Landing = () => {
               Source. Open Code.
             </p>
             <div className="mt-6 flex items-center justify-center gap-4">
-              <Button>Get Started</Button>
+              <Button
+                onClick={() => {
+                  navigate("/dashboard");
+                }}
+              >
+                Get Started
+              </Button>
               <Button variant={"ghost"}> View Components</Button>
             </div>
           </div>
         </section>
       </main>
-      <footer className="py-6 md:px-8 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
-            Built by{" "}
-            <a
-              href="#"
-              target="_blank"
-              className="font-medium underline underline-offset-4"
-            >
-              UINative
-            </a>
-            . The source code is available on{" "}
-            <a
-              href="#"
-              target="_blank"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
-            </a>
-            .
-          </p>
-        </div>
-      </footer>
+      <main className="flex-1 bg-gray-50">
+        <section className="px-6 md:px-12 text-center py-12 lg:py-24">
+          <div className="flex items-center justify-center gap-3 max-w-xl mx-auto">
+            <Input
+              type="text"
+              placeholder="Search for components, styles, creators..."
+              className="w-full py-6  text-gray-900 placeholder-gray-400 bg-white"
+            />
+            <Button className=" h-full rounded-r-lg px-9  py-3 font-medium">
+              Search
+            </Button>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 };

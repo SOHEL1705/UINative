@@ -1,17 +1,7 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Dashboard from "./components/dashboard/Dashboard";
+import {RouterProvider } from "react-router-dom";
+import router from "./routes";
+import "./App.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Landing />,
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
-]);
 
 function App() {
   return <RouterProvider router={router} />;
